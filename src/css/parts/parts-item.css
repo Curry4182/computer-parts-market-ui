@@ -1,0 +1,45 @@
+.parts-item-title {
+    font: 20px Roboto;
+    font-weight: bold;
+}
+
+.parts-item-description {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.parts-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.part-item-left-box {
+    margin: 5px 50px 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.parts-item-right-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.parts-item-right-box button {
+    font-weight: bold;
+}
+
+.parts-item-cost {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.parts-title-box {
+    padding: 10px;
+}
+
+.parts-title {
+    font-size: 25px;
+    font-weight: bold;
+}
