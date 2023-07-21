@@ -3,8 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
 import PartsItem from "./components/parts/partsItem";
-import './css/summary/summary.css';
-import {SummaryItem} from "./css/summary/summary/summaryItem";
+import {SummaryItem} from "./components/summary/summaryItem";
+import {TotalBox} from "./components/summary/totalBox";
 
 function App() {
   return (
@@ -39,7 +39,12 @@ function App() {
                               <li className="list-group-item border border-0">
                                   <SummaryItem></SummaryItem>
                               </li>
+                              <li className="list-group-item border border-0">
+                                  <SummaryItem></SummaryItem>
+                              </li>
                           </ul>
+                          <hr/>
+                          <TotalBox></TotalBox>
                       </div>
                   </div>
               </div>

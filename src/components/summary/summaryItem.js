@@ -1,6 +1,5 @@
 import React from "react";
-
-
+import '../../css/summary/summary.css';
 export function SummaryItem() {
 
     return (

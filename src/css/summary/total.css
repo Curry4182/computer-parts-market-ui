@@ -1,0 +1,39 @@
+.total-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.total-count-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.total-count {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.total-cost-container {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-cost-title {
+    margin-right: 20px;
+}
+
+.total-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-footer-btn {
+    font-size: 17px;
+    font-weight: bolder;
+}
