@@ -3,6 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
 import PartsItem from "./components/parts/partsItem";
+import './css/summary/summary.css';
+import {SummaryItem} from "./css/summary/summary/summaryItem";
 
 function App() {
   return (
@@ -29,8 +31,16 @@ function App() {
                       </ul>
                   </div>
 
-                  <div className="col-xl-3 col-sm-4 p-3 border border-black">
-
+                  <div className="col-xl-3 col-sm-4 p-3 border border-1 rounded-3 border-black">
+                      <div class="summary-title-box">
+                          <h3 className="summary-title">요약 페이지</h3>
+                          <hr/>
+                          <ul className="list-group">
+                              <li className="list-group-item border border-0">
+                                  <SummaryItem></SummaryItem>
+                              </li>
+                          </ul>
+                      </div>
                   </div>
               </div>
 
