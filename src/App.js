@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
-import PartsItem from "./components/parts/partsItem";
 import {SummaryItem} from "./components/summary/summaryItem";
 import {TotalBox} from "./components/summary/totalBox";
+import {PartsList} from "./components/parts/partsList";
 
 function App() {
   return (
@@ -18,17 +17,7 @@ function App() {
                       <div className="parts-title-box ">
                           <h3 className="parts-title">상품 목록</h3>
                       </div>
-                      <ul className="list-group col-md-12 border border-danger">
-                          <li className="list-group-item">
-                            <PartsItem/>
-                          </li>
-                          <li className="list-group-item ">
-                            <PartsItem/>
-                          </li>
-                          <li className="list-group-item">
-                              <PartsItem/>
-                          </li>
-                      </ul>
+                      <PartsList></PartsList>
                   </div>
 
                   <div className="col-xl-3 col-sm-4 p-3 border border-1 rounded-3 border-black">
