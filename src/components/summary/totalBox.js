@@ -8,6 +8,10 @@ export function TotalBox(props) {
         props.onDeleteAllClick();
     }
 
+    const handleSubmit = () => {
+        props.onSubmit();
+    }
+
     return (
         <div className="total-box">
             <div className="total-count-box">
@@ -19,7 +23,7 @@ export function TotalBox(props) {
                 <span className="total-cost">{totalPrice.toLocaleString('ko-KR')}원</span>
             </div>
             <footer className="total-footer">
-                <btn className="total-footer-btn btn btn-danger"> 구매하기 </btn>
+                <btn className="total-footer-btn btn btn-danger" onClick={handleSubmit}> 구매하기 </btn>
             </footer>
         </div>
     )
