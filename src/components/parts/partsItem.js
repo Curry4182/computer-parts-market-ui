@@ -19,7 +19,7 @@ function PartsItem(props) {
                 <p className="parts-item-description">{partDescription} </p>
             </div>
             <div className="col-md-3 parts-item-right-box">
-                <div className="parts-item-cost">{partPrice}원</div>
+                <div className="parts-item-cost">{partPrice.toLocaleString('ko-KR')}원</div>
                 <button onClick={handleAddToSummaryClicked} className="btn btn-outline-secondary">담기 -> </button>
             </div>
         </div>

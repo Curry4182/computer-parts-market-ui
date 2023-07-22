@@ -23,7 +23,7 @@ export function SummaryItem(props) {
                         <input type="text" className="count-input" maxLength="3" value={partCount}></input>
                         <button className="btn-cnt-up"> +</button>
                     </div>
-                    <div className="summary-item-cost">{partPrice}원</div>
+                    <div className="summary-item-cost">{partPrice.toLocaleString('ko-KR')}원</div>
                 </div>
             </div>
         </div>
