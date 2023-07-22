@@ -36,6 +36,32 @@ function App() {
         setSummaryItems([]);
     }
 
+    const handleCntUpClick = (partId) => {
+        const summaryItem = summaryItems.find(summaryItem => summaryItem.partId == partId);
+
+        const updatedItems =
+            summaryItem ? summaryItems.map(
+                    summaryItem => summaryItem.partId == partId ? { ...summaryItem, partCount: summaryItem.partCount +1} : summaryItem)
+                : [...summaryItems]
+
+        setSummaryItems(updatedItems);
+    }
+
+    const handleCntDownClick = (partId) => {
+        const summaryItem = summaryItems.find(summaryItem => summaryItem.partId == partId);
+
+        if(summaryItem.partCount < 1) {
+            return;
+        }
+
+        const updatedItems =
+            summaryItem ? summaryItems.map(
+                    summaryItem => summaryItem.partId == partId ? { ...summaryItem, partCount: summaryItem.partCount -1} : summaryItem)
+                : [...summaryItems]
+
+        setSummaryItems(updatedItems);
+    }
+
     return (
       <div className="container-fluid">
           <div className="row justify-content-center m-4">
@@ -54,7 +80,11 @@ function App() {
                       <div class="summary-title-box">
                           <h3 className="summary-title">요약 페이지</h3>
                           <hr/>
-                          <Summary summaryItems={summaryItems} onDeleteAllClick={handleDeleteAllClick}></Summary>
+                          <Summary summaryItems={summaryItems}
+                                   onDeleteAllClick={handleDeleteAllClick}
+                                   onCntDownClick={handleCntDownClick}
+                                   onCntUpClick={handleCntUpClick}
+                          ></Summary>
                       </div>
                   </div>
               </div>

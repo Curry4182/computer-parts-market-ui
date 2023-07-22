@@ -3,6 +3,7 @@ import '../../css/summary/total.css';
 
 export function TotalBox(props) {
     const totalPrice = props.summaryItems.reduce((prev, curr) => prev + (curr.partPrice * curr.partCount), 0);
+    const totalCnt = props.summaryItems.reduce((prev, curr)=> prev + (curr.partCount), 0);
     const handleDeleteAllClicked = () => {
         props.onDeleteAllClick();
     }
@@ -10,7 +11,7 @@ export function TotalBox(props) {
     return (
         <div className="total-box">
             <div className="total-count-box">
-                <span className="total-count"> 총 <span className="fw-bold">1</span>개 품목선택</span>
+                <span className="total-count"> 총 <span className="fw-bold">{totalCnt}</span>개 품목선택</span>
                 <button className="btn btn-outline-secondary" onClick={handleDeleteAllClicked}> 전체삭제 </button>
             </div>
             <div className="total-cost-container">

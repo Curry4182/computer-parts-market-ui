@@ -8,7 +8,13 @@ export function SummaryItem(props) {
     const partDescription = props.partDescription;
     const partCount = props.partCount;
 
+    const handleCntDownClicked = (e) => {
+        props.onCntDownClick(partId);
+    }
 
+    const handleCntUpClicked = (e) => {
+        props.onCntUpClick(partId);
+    }
 
     return (
         <div className="card border border-danger">
@@ -19,9 +25,9 @@ export function SummaryItem(props) {
                 <p>{partName}</p>
                 <div className="summary-item-cost-box">
                     <div className="count-box">
-                        <button className="btn-cnt-dwn"> -</button>
-                        <input type="text" className="count-input" maxLength="3" value={partCount}></input>
-                        <button className="btn-cnt-up"> +</button>
+                        <button className="btn-cnt-dwn" onClick={handleCntDownClicked}> -</button>
+                        <input readOnly type="text" className="count-input" maxLength="3" value={partCount}></input>
+                        <button className="btn-cnt-up" onClick={handleCntUpClicked}> +</button>
                     </div>
                     <div className="summary-item-cost">{partPrice.toLocaleString('ko-KR')}원</div>
                 </div>
