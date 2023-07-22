@@ -1,11 +1,42 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {PartsList} from "./components/parts/partsList";
 import {Summary} from "./components/summary/summary";
+import axios from "axios";
+
+
+
 
 function App() {
-  return (
+
+    const [computerParts, setParts] = useState([
+        ]);
+
+    useEffect(
+        () => {
+            axios.get('http://localhost:8080/api/computer-parts')
+                .then(part => setParts(part.data));
+        }, []
+    );
+
+    const [summaryItems, setSummaryItems] = useState([]);
+
+    const handleAddToSummaryClick = partId => {
+        console.log('call handleAddToSummaryClick');
+
+        const computerPart = computerParts.find(computerPart => computerPart.partId == partId);
+        const summaryItem = summaryItems.find(summaryItem => summaryItem.partId == partId);
+
+        const updatedItems =
+            summaryItem ? summaryItems.map(
+                summaryItem => summaryItem.partId == partId ? { ...summaryItem, count: summaryItem.count +1} : summaryItem)
+                : [...summaryItems, {...summaryItem, count: 1}]
+
+        setSummaryItems(updatedItems);
+    }
+
+    return (
       <div className="container-fluid">
           <div className="row justify-content-center m-4">
               <h1 className="text-center">Computer Parts Market</h1>
@@ -16,7 +47,7 @@ function App() {
                       <div className="parts-title-box ">
                           <h3 className="parts-title">상품 목록</h3>
                       </div>
-                      <PartsList></PartsList>
+                      <PartsList computerParts={computerParts} onAddToSummaryClick={handleAddToSummaryClick}></PartsList>
                   </div>
 
                   <div className="col-xl-3 col-sm-4 p-3 border border-1 rounded-3 border-black">
