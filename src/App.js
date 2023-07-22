@@ -12,7 +12,7 @@ function App() {
 
     useEffect(
         () => {
-            axios.get('http://localhost:8080/api/computer-parts')
+            axios.get('http://localhost:4923/api/computer-parts')
                 .then(part => setParts(part.data));
         }, []
     );

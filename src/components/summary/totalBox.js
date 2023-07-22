@@ -2,6 +2,7 @@ import React from "react";
 import '../../css/summary/total.css';
 
 export function TotalBox(props) {
+    const totalPrice = props.summaryItems.reduce((prev, curr) => prev + (curr.partPrice * curr.partCount), 0);
     const handleDeleteAllClicked = () => {
         props.onDeleteAllClick();
     }
@@ -14,7 +15,7 @@ export function TotalBox(props) {
             </div>
             <div className="total-cost-container">
                 <span className="total-cost-title">총 합계금액</span>
-                <span className="total-cost">9,593,332원</span>
+                <span className="total-cost">{totalPrice.toLocaleString('ko-KR')}원</span>
             </div>
             <footer className="total-footer">
                 <btn className="total-footer-btn btn btn-danger"> 구매하기 </btn>

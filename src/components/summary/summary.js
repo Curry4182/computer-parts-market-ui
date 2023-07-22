@@ -7,7 +7,7 @@ export function Summary({summaryItems = [], onDeleteAllClick}) {
         <>
             <SummaryList summaryItems={summaryItems}></SummaryList>
             <hr/>
-            <TotalBox onDeleteAllClick={onDeleteAllClick}></TotalBox>
+            <TotalBox summaryItems={summaryItems} onDeleteAllClick={onDeleteAllClick}></TotalBox>
         </>
     )
 }
