@@ -65,7 +65,7 @@ function App() {
     return (
       <div className="container-fluid">
           <div className="row justify-content-center m-4">
-              <h1 className="text-center">Computer Parts Market</h1>
+              <h1 className="text-center font-monospace fw-bold">Computer Parts Market</h1>
           </div>
           <div className="card">
               <div className="row col-md-12 mt-4 d-flex flex-row justify-content-md-center">
