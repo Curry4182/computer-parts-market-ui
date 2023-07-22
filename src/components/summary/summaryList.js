@@ -1,17 +1,14 @@
 import {SummaryItem} from "./summaryItem";
 import React from "react";
 
-
-export function SummaryList() {
-
+export function SummaryList({summaryItems = []}) {
     return(
         <ul className="list-group">
-            <li className="list-group-item border border-0">
-                <SummaryItem></SummaryItem>
-            </li>
-            <li className="list-group-item border border-0">
-                <SummaryItem></SummaryItem>
-            </li>
+            {summaryItems.map(item =>
+                <li className="list-group-item border border-0">
+                    <SummaryItem {...item}/>
+                </li>
+            )}
         </ul>
     )
 }

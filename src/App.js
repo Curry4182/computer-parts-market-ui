@@ -5,9 +5,6 @@ import {PartsList} from "./components/parts/partsList";
 import {Summary} from "./components/summary/summary";
 import axios from "axios";
 
-
-
-
 function App() {
 
     const [computerParts, setParts] = useState([
@@ -30,10 +27,13 @@ function App() {
 
         const updatedItems =
             summaryItem ? summaryItems.map(
-                summaryItem => summaryItem.partId == partId ? { ...summaryItem, count: summaryItem.count +1} : summaryItem)
-                : [...summaryItems, {...summaryItem, count: 1}]
+                summaryItem => summaryItem.partId == partId ? { ...summaryItem, partCount: summaryItem.partCount +1} : summaryItem)
+                : [...summaryItems, {...computerPart, partCount: 1}]
 
         setSummaryItems(updatedItems);
+    }
+    const handleDeleteAllClick =() => {
+        setSummaryItems([]);
     }
 
     return (
@@ -54,7 +54,7 @@ function App() {
                       <div class="summary-title-box">
                           <h3 className="summary-title">요약 페이지</h3>
                           <hr/>
-                          <Summary></Summary>
+                          <Summary summaryItems={summaryItems} onDeleteAllClick={handleDeleteAllClick}></Summary>
                       </div>
                   </div>
               </div>

@@ -9,7 +9,7 @@ function PartsItem(props) {
 
 
     const handleAddToSummaryClicked = e => {
-        props.onAddToSummaryClick();
+        props.onAddToSummaryClick(partId);
     }
 
     return (

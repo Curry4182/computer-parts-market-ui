@@ -2,12 +2,12 @@ import React from "react";
 import {TotalBox} from "./totalBox";
 import {SummaryList} from "./summaryList";
 
-export function Summary() {
+export function Summary({summaryItems = [], onDeleteAllClick}) {
     return (
         <>
-            <SummaryList></SummaryList>
+            <SummaryList summaryItems={summaryItems}></SummaryList>
             <hr/>
-            <TotalBox></TotalBox>
+            <TotalBox onDeleteAllClick={onDeleteAllClick}></TotalBox>
         </>
     )
 }
